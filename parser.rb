@@ -15,6 +15,9 @@
     puts
     str = html.match(/<(.*)>/).captures[0]
 
+    /[a-z]{2,5}='(.*)'/
+    each element = str.match(//)
+
      puts str 
 
      puts
