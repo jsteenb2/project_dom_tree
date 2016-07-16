@@ -3,6 +3,13 @@ require 'ostruct'
 
 Tag = Struct.new(:type, :attributes, :children)
 
+class HTMLLoader
+
+  def load_file(file)
+
+  end
+end
+
 class HTMLParser
 
   def initialize(html_text)
@@ -13,7 +20,7 @@ class HTMLParser
   def parse_tag(html)
     attr_hash = {}
     tag = {:attributes => nil, :tag_type => nil}
-    tag[:tag_type] = html.match(/<(\w*)/).captures[0]
+    tag[:tag_type] = html.match(/<(\/\w*)>/).captures[0]
     regex = /[a-z]+\s*='[\w\s]*'/
     elements = html.scan(regex)
     elements.each do |info|
